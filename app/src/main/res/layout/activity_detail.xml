@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+>
     <data>
         <variable
             name="pokemon"
@@ -18,10 +22,7 @@
 
     </data>
 
-<RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".view.DetailActivity"
@@ -137,7 +138,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="Electric"
-            android:text="@{pokemon.types.size() > 1 ? pokemon.types.get(1).type.name : View.GONE}"
+            android:text="@{pokemon.types.get(1).type.name}"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             android:fontFamily="@font/joystix_monospace"

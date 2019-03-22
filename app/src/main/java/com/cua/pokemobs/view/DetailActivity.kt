@@ -2,9 +2,11 @@ package com.cua.pokemobs.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.databinding.DataBindingUtil
 import com.cua.pokemobs.R
 
 class DetailActivity : AppCompatActivity() {
+
     companion object {
         const val SEARCH_PK = "SearchString"
     }
