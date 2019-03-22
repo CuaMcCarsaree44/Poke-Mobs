@@ -4,16 +4,16 @@ import com.google.gson.annotations.SerializedName
 
 data class StatsItem(
 
-    val stat: Stat? = null,
+    val stat: Stat = Stat(),
 
     @field:SerializedName("base_stat")
-    val baseStat: Int? = null,
+    val baseStat: Int = 0,
 
-    val effort: Int? = null
+    val effort: Int = 0
 )
 
 data class Stat(
-    val name: String? = null,
-    val url: String? = null
+    val name: String = "",
+    val url: String = ""
 )
 

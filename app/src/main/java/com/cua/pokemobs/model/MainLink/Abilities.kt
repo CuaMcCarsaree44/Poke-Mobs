@@ -5,14 +5,13 @@ import com.google.gson.annotations.SerializedName
 data class AbilitiesItem(
 
     @field:SerializedName("is_hidden")
-    val isHidden: Boolean? = null,
+    val isHidden: Boolean = false,
 
-    val ability: Ability? = null,
-    val slot: Int? = null
+    val ability: Ability = Ability(),
+    val slot: Int = 0
 )
 
 data class Ability(
-
-    val name: String? = null,
-    val url: String? = null
+    val name: String = "",
+    val url: String = ""
 )

@@ -1,11 +1,11 @@
 package com.cua.pokemobs.model.MainLink
 
 data class TypesItem(
-    val slot: Int? = null,
-    val type: Type? = null
+    val slot: Int = 0,
+    val type: Type = Type()
 )
 
 data class Type(
-    val name: String? = null,
-    val url: String? = null
+    val name: String = "",
+    val url: String = ""
 )

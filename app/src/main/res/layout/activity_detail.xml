@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
     <data>
+        <variable
+            name="pokemon"
+            type="com.cua.pokemobs.model.MainLink.Response"
+        />
 
+        <variable
+            name="species"
+            type="com.cua.pokemobs.model.SpeciesLink.Response"
+            />
 
     </data>
 
@@ -23,7 +31,7 @@
             android:textColor="#FFFFFF"
             android:fontFamily="@font/joystix_monospace"
             android:textSize="30sp"
-
+            android:text="@{pokemon.name}"
             tools:text="Fletchinder"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="10dp"
