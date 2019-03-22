@@ -8,7 +8,12 @@
 
         <variable
             name="species"
-            type="com.cua.pokemobs.model.SpeciesLink.Response"
+            type="com.cua.pokemobs.model.SpeciesLink.GeneraItem"
+            />
+
+        <variable
+            name="image"
+            type="com.cua.pokemobs.model.Image.Response"
             />
 
     </data>
@@ -87,7 +92,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="999"
-            android:text=""
+            android:text="@{pokemon.id}"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             android:fontFamily="@font/joystix_monospace"
@@ -117,6 +122,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="Fighting"
+            android:text="@{pokemon.types.get(0).type.name}"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             android:fontFamily="@font/joystix_monospace"
@@ -131,6 +137,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="Electric"
+            android:text="@{pokemon.types.size() > 1 ? pokemon.types.get(1).type.name : View.GONE}"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             android:fontFamily="@font/joystix_monospace"
@@ -159,6 +166,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="Seed Pokemon"
+            android:text="@{species.genus}"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             android:fontFamily="@font/joystix_monospace"
@@ -187,6 +195,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="9.99 "
+            android:text="@{pokemon.height}"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             android:fontFamily="@font/joystix_monospace"
@@ -229,6 +238,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="999.9  "
+            android:text="@{pokemon.weight}"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             android:fontFamily="@font/joystix_monospace"
@@ -284,7 +294,8 @@
             android:textSize="15sp"
             android:textColor="#FFFFFF"
             android:fontFamily="@font/joystix_monospace"
-            android:text="500"
+            tools:text="500"
+            android:text="@{pokemon.stats.get(5).baseStat}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
@@ -300,8 +311,7 @@
             android:layout_height="15dp"
             android:background="#FF00FF00"
             android:max="999"
-            android:min="0"
-            android:progress="500"
+            android:progress="@{pokemon.stats.get(5).baseStat}"
 
             android:layout_alignParentRight="true"
             android:layout_marginRight="56dp"
@@ -343,7 +353,8 @@
             android:textSize="15sp"
             android:textColor="#FFFFFF"
             android:fontFamily="@font/joystix_monospace"
-            android:text="67"
+            tools:text="67"
+            android:text="@{pokemon.stats.get(4).baseStat}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
@@ -358,8 +369,8 @@
             android:layout_width="300dp"
             android:layout_height="15dp"
             android:background="#FF00FF00"
-            android:max="138"
-            android:progress="67"
+            android:max="999"
+            android:progress="@{pokemon.stats.get(4).baseStat}"
 
             android:layout_alignParentRight="true"
             android:layout_marginRight="56dp"
@@ -371,7 +382,7 @@
             android:textSize="15sp"
             android:textColor="#FFFFFF"
             android:fontFamily="@font/joystix_monospace"
-            android:text="138"
+            android:text="999"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
@@ -402,7 +413,8 @@
             android:textSize="15sp"
             android:textColor="#FFFFFF"
             android:fontFamily="@font/joystix_monospace"
-            android:text="89"
+            tools:text="89"
+            android:text="@{pokemon.stats.get(3).baseStat}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
@@ -417,8 +429,8 @@
             android:layout_width="300dp"
             android:layout_height="15dp"
             android:background="#FF00FF00"
-            android:max="215"
-            android:progress="67"
+            android:max="999"
+            android:progress="@{pokemon.stats.get(3).baseStat}"
 
             android:layout_alignParentRight="true"
             android:layout_marginRight="56dp"
@@ -430,7 +442,7 @@
             android:textSize="15sp"
             android:textColor="#FFFFFF"
             android:fontFamily="@font/joystix_monospace"
-            android:text="215"
+            android:text="999"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
