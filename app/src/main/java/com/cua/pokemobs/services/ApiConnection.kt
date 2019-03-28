@@ -32,7 +32,19 @@ class ApiConnection {
 
     private fun setInit():Retrofit
     {
-        return Retrofit.Builder().baseUrl(MAIN_API_BODY)
+        return Retrofit.Builder().baseUrl(MAIN_API_POKEMON)
+            .addConverterFactory(GsonConverterFactory.create()).client(httpClient).build()
+    }
+
+    private fun setInit2():Retrofit
+    {
+        return Retrofit.Builder().baseUrl(MAIN_API_IMAGE)
+            .addConverterFactory(GsonConverterFactory.create()).client(httpClient).build()
+    }
+
+    private fun setInit3():Retrofit
+    {
+        return Retrofit.Builder().baseUrl(MAIN_API_SPECIES)
             .addConverterFactory(GsonConverterFactory.create()).client(httpClient).build()
     }
 
@@ -41,7 +53,19 @@ class ApiConnection {
         return setInit().create(ApiServices::class.java)
     }
 
+    fun getInstanceForImage():ApiServices
+    {
+        return setInit2().create(ApiServices::class.java)
+    }
+
+    fun getInstanceForSpecies():ApiServices
+    {
+        return setInit3().create(ApiServices::class.java)
+    }
+
     companion object {
-        private const val MAIN_API_BODY = "https://pokeapi.co/api/v2/"
+        private const val MAIN_API_POKEMON = "https://pokeapi.co/api/v2/pokemon/"
+        private const val MAIN_API_SPECIES = "https://pokeapi.co/api/v2/pokemon-species/"
+        private const val MAIN_API_IMAGE = "https://pokeapi.co/api/v2/pokemon-form/"
     }
 }

@@ -6,18 +6,22 @@
 >
     <data>
         <variable
+            name="viewModel"
+            type="com.cua.pokemobs.viewmodel.PokemonViewModel"
+            />
+        <variable
             name="pokemon"
-            type="com.cua.pokemobs.model.MainLink.Response"
+            type="com.cua.pokemobs.model.mainlink.MainResponse"
         />
 
         <variable
             name="species"
-            type="com.cua.pokemobs.model.SpeciesLink.GeneraItem"
+            type="com.cua.pokemobs.model.specieslink.SpeciesResponse"
             />
 
         <variable
             name="image"
-            type="com.cua.pokemobs.model.Image.Response"
+            type="com.cua.pokemobs.model.image.ImageResponse"
             />
 
     </data>
@@ -32,12 +36,13 @@
 
 
     <TextView
+            android:id="@+id/nameLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#FFFFFF"
             android:fontFamily="@font/joystix_monospace"
             android:textSize="30sp"
-            android:text="@{pokemon.name}"
+            android:text="@{viewModel.pokemonData.name}"
             tools:text="Fletchinder"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="10dp"
@@ -47,6 +52,7 @@
             android:layout_marginStart="10dp"/>
 
     <ImageView
+            android:id="@+id/pokemoonImage"
             android:layout_width="96dp"
             android:layout_height="96dp"
             tools:src="@drawable/ic_pokeball"
@@ -90,10 +96,11 @@
     />
 
     <TextView
+            android:id="@+id/pokemonID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="999"
-            android:text="@{pokemon.id}"
+            android:text="@{viewModel.pokemonData.id}"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             android:fontFamily="@font/joystix_monospace"
@@ -118,12 +125,12 @@
             android:layout_marginTop="160dp"
             android:layout_marginRight="155.5dp"
     />
-
     <TextView
+            android:id="@+id/pokemonType1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="Fighting"
-            android:text="@{pokemon.types.get(0).type.name}"
+            android:text="@{viewModel.pokemonData.types.get(0).type.name}"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             android:fontFamily="@font/joystix_monospace"
@@ -135,10 +142,11 @@
     />
 
     <TextView
+            android:id="@+id/pokemonType2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="Electric"
-            android:text="@{pokemon.types.get(1).type.name}"
+            android:text="@{viewModel.pokemonData.types.get(1).type.name}"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             android:fontFamily="@font/joystix_monospace"
@@ -164,10 +172,11 @@
     />
 
     <TextView
+            android:id="@+id/pokemonSpecies"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="Seed Pokemon"
-            android:text="@{species.genus}"
+            android:text="@{viewModel.pokemonSpecies.genera.get(0).genus}"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             android:fontFamily="@font/joystix_monospace"
@@ -193,10 +202,11 @@
     />
 
     <TextView
+            android:id="@+id/pokemonHeight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="9.99 "
-            android:text="@{pokemon.height}"
+            android:text="@{viewModel.pokemonData.height}"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             android:fontFamily="@font/joystix_monospace"
@@ -236,10 +246,11 @@
     />
 
     <TextView
+            android:id="@+id/pokemonWeight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="999.9  "
-            android:text="@{pokemon.weight}"
+            android:text="@{viewModel.pokemonData.weight}"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             android:fontFamily="@font/joystix_monospace"
@@ -292,11 +303,12 @@
     />
 
     <TextView
+            android:id="@+id/pokemonHP"
             android:textSize="15sp"
             android:textColor="#FFFFFF"
             android:fontFamily="@font/joystix_monospace"
             tools:text="500"
-            android:text="@{pokemon.stats.get(5).baseStat}"
+            android:text="@{viewModel.pokemonData.stats.get(5).baseStat}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
@@ -312,7 +324,7 @@
             android:layout_height="15dp"
             android:background="#FF00FF00"
             android:max="999"
-            android:progress="@{pokemon.stats.get(5).baseStat}"
+            android:progress="@{viewModel.pokemonData.stats.get(5).baseStat}"
 
             android:layout_alignParentRight="true"
             android:layout_marginRight="56dp"
@@ -351,11 +363,12 @@
     />
 
     <TextView
+            android:id="@+id/pokemonATK"
             android:textSize="15sp"
             android:textColor="#FFFFFF"
             android:fontFamily="@font/joystix_monospace"
             tools:text="67"
-            android:text="@{pokemon.stats.get(4).baseStat}"
+            android:text="@{viewModel.pokemonData.stats.get(4).baseStat}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
@@ -371,7 +384,7 @@
             android:layout_height="15dp"
             android:background="#FF00FF00"
             android:max="999"
-            android:progress="@{pokemon.stats.get(4).baseStat}"
+            android:progress="@{viewModel.pokemonData.stats.get(4).baseStat}"
 
             android:layout_alignParentRight="true"
             android:layout_marginRight="56dp"
@@ -411,11 +424,12 @@
     />
 
     <TextView
+            android:id="@+id/pokemonDEF"
             android:textSize="15sp"
             android:textColor="#FFFFFF"
             android:fontFamily="@font/joystix_monospace"
             tools:text="89"
-            android:text="@{pokemon.stats.get(3).baseStat}"
+            android:text="@{viewModel.pokemonData.stats.get(3).baseStat}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
@@ -431,7 +445,7 @@
             android:layout_height="15dp"
             android:background="#FF00FF00"
             android:max="999"
-            android:progress="@{pokemon.stats.get(3).baseStat}"
+            android:progress="@{viewModel.pokemonData.stats.get(3).baseStat}"
 
             android:layout_alignParentRight="true"
             android:layout_marginRight="56dp"

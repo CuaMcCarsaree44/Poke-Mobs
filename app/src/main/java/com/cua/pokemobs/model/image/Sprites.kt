@@ -1,4 +1,4 @@
-package com.cua.pokemobs.model.Image
+package com.cua.pokemobs.model.image
 
 import com.google.gson.annotations.SerializedName
 

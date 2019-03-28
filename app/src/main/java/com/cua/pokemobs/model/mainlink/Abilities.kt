@@ -1,4 +1,4 @@
-package com.cua.pokemobs.model.MainLink
+package com.cua.pokemobs.model.mainlink
 
 import com.google.gson.annotations.SerializedName
 
